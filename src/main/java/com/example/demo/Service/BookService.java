@@ -1,7 +1,8 @@
 package com.example.demo.Service;
 
 import com.example.demo.Entities.Book;
-import com.example.demo.BookRepository;
+
+import com.example.demo.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -30,8 +31,11 @@ public class BookService {
         }
     }
     public List<Book> findAllBooks(){
-         return bookRepository.getBooks();
+         return bookRepository.findAll();
     }
 
+    public List<Book> findByTitleContaining(String title) {
+       return bookRepository.findByTitleContaining(title);
     }
+}
 

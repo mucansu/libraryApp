@@ -8,6 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -20,7 +23,7 @@ return "Home";
     }
 
     @GetMapping("/Books/Search")
-    public ResponseEntity<?> searcBooks(@PathVariable String Isbn) throws Exception {
+    public ResponseEntity<?> searcBooks(@RequestParam String Isbn) throws Exception {
         try {
             Book book = this.bookService.searchByIsbn(Isbn);
             if (book != null) {
@@ -35,5 +38,9 @@ return "Home";
     @GetMapping("/Books")
     public ResponseEntity<?> allBooks (){
       return new ResponseEntity<>(bookService.findAllBooks(),HttpStatus.OK);
+    }
+    @GetMapping("/search")
+    public List<Book> searchBooks(@RequestParam String title) {
+        return bookService.findByTitleContaining(title);
     }
 }

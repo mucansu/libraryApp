@@ -2,9 +2,9 @@ package com.example.demo;
 import com.example.demo.Entities.Book;
 
 import java.util.ArrayList;
-
+/*
 public class BookRepository {
-    /*private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<>();
 
     public BookRepository(String isbn, String title, String genre, String description, String author){
 
@@ -22,7 +22,7 @@ Book findByIsbn(String isbn){
             }
         }
         return null;
-        */
+
 
     private final ArrayList<Book> books = new ArrayList<>();
     public BookRepository () {
@@ -56,4 +56,4 @@ Book findByIsbn(String isbn){
     }
 }
 
-
+ */
