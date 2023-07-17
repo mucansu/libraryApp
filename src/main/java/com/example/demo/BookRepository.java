@@ -1,4 +1,6 @@
 package com.example.demo;
+import com.example.demo.Entities.Book;
+
 import java.util.ArrayList;
 
 public class BookRepository {
@@ -40,7 +42,7 @@ Book findByIsbn(String isbn){
 
 
     }
-    Book findByIsbn (String isbn){
+    public Book findByIsbn(String isbn){
         for (Book book : books){
             if (book.getIsbn().equals(isbn)){
                 return book;

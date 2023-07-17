@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.Entities.Book;
+import com.example.demo.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class MainController {
     @Autowired
-    BookService bookService;
-    @GetMapping("/Home")
-    public String mainPage() {
-        return "Home";
+    private BookService bookService;
+@GetMapping("/Home")
+public String mainPage(){
+return "Home";
 
     }
 

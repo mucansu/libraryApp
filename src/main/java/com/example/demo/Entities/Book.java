@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Entities;
 import java.util.ArrayList;
 
 public class Book {

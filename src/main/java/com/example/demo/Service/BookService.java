@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.Service;
 
+import com.example.demo.Entities.Book;
+import com.example.demo.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -15,7 +17,7 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    Book searchByIsbn(String isbn) throws Exception {
+    public Book searchByIsbn(String isbn) throws Exception {
         System.out.printf("Searching for books with ISBN %s\n", isbn);
         bookRepository.findByIsbn(isbn);
         Book book = bookRepository.findByIsbn(isbn);
@@ -27,7 +29,7 @@ public class BookService {
 
         }
     }
-    List<Book> findAllBooks (){
+    public List<Book> findAllBooks(){
          return bookRepository.getBooks();
     }
 
